@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448989196452809" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>??뚮Ц??蹂?섍린 - ?곷Ц ?臾몄옄 ?뚮Ц??臾대즺 蹂??| ?대컯??/title>
+  <meta name="description" content="?곷Ц ?띿뒪?몃? 紐⑤몢 ?臾몄옄, 紐⑤몢 ?뚮Ц?? 泥?湲?먮쭔 ?臾몄옄 ?깆쑝濡??대┃ ??踰덉뿉 蹂?섑빐?쒕┰?덈떎." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<header class="header">
+  <nav class="nav container">
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></a>
+    <button class="theme-toggle" id="themeToggle">?뙔</button>
+  </nav>
+</header>
+
+<main class="tool-page">
+  <div class="container">
+    <a href="../index.html" class="back-btn">???꾩껜 ?꾧뎄濡??뚯븘媛湲?/a>
+    <div class="tool-page-header">
+      <div style="font-size:3.5rem" class="tool-emoji">?뵥</div>
+      <h1>??뚮Ц??蹂?섍린</h1>
+      <p>?곸뼱 ?띿뒪?몄쓽 ??뚮Ц?먮? ?먰븯???뺤떇?쇰줈 利됱떆 蹂??/p>
+    </div>
+
+    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+
+    <div class="tool-box glass-card">
+      <div class="form-group">
+        <textarea class="form-textarea" id="inputText" placeholder="?ш린???곸뼱 ?띿뒪?몃? ?낅젰?섏꽭??.." style="min-height:200px"></textarea>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px;">
+        <button class="btn-secondary" onclick="convert('upper')">紐⑤몢 ?臾몄옄濡?/button>
+        <button class="btn-secondary" onclick="convert('lower')">紐⑤몢 ?뚮Ц?먮줈</button>
+        <button class="btn-secondary" onclick="convert('sentence')">臾몄옣 泥?湲?먮쭔</button>
+        <button class="btn-secondary" onclick="convert('title')">?⑥뼱 泥?湲?먮쭔</button>
+        <button class="btn-secondary" onclick="convert('camel')">camelCase</button>
+        <button class="btn-secondary" onclick="convert('snake')">snake_case</button>
+      </div>
+
+      <div style="display:flex;gap:12px;">
+        <button class="btn-primary" onclick="copyText()" style="flex:2" id="copyBtn">?뱥 寃곌낵 蹂듭궗?섍린</button>
+        <button class="btn-secondary" onclick="clearText()" style="flex:1">?뿊截?珥덇린??/button>
+      </div>
+    </div>
+
+    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+  </div>
+</main>
+
+<script src="../main.js"></script>
+<script>
+const input = document.getElementById('inputText');
+
+function convert(type) {
+  let text = input.value;
+  if(!text) return;
+  
+  if(type === 'upper') {
+    text = text.toUpperCase();
+  } else if(type === 'lower') {
+    text = text.toLowerCase();
+  } else if(type === 'sentence') {
+    text = text.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase());
+  } else if(type === 'title') {
+    text = text.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  } else if(type === 'camel') {
+    text = text.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => {
+      if (+match === 0) return "";
+      return index === 0 ? match.toLowerCase() : match.toUpperCase();
+    });
+  } else if(type === 'snake') {
+    text = text.replace(/\W+/g, " ").split(/ |\B(?=[A-Z])/).map(w => w.toLowerCase()).join('_');
+  }
+  
+  input.value = text;
+}
+
+function copyText() {
+  if(!input.value) return;
+  navigator.clipboard.writeText(input.value).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '??蹂듭궗 ?꾨즺!';
+    setTimeout(() => btn.textContent = '?뱥 寃곌낵 蹂듭궗?섍린', 2000);
+  });
+}
+
+function clearText() {
+  input.value = '';
+}
+</script>
+</body>
+</html>
+

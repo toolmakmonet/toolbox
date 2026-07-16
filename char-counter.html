@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448989196452809" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>湲?먯닔 ?멸린 - 臾대즺 ?⑤씪??湲?먯닔 移댁슫??| ?대컯??/title>
+  <meta name="description" content="湲?먯닔, ?⑥뼱?? 臾몄옣?? 以꾩닔瑜??ㅼ떆媛꾩쑝濡?臾대즺濡??몄뼱?쒕┰?덈떎. ?뚯썝媛???놁씠 利됱떆 ?ъ슜!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<header class="header">
+  <nav class="nav container">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-icon">?썱截?/span>
+      <span class="logo-text">?대컯??/span>
+    </a>
+    <button class="theme-toggle" id="themeToggle">?뙔</button>
+  </nav>
+</header>
+
+<main class="tool-page">
+  <div class="container">
+    <a href="../index.html" class="back-btn">???꾩껜 ?꾧뎄濡??뚯븘媛湲?/a>
+
+    <div class="tool-page-header">
+      <div style="font-size:3.5rem">?뱷</div>
+      <h1>湲?먯닔 ?멸린</h1>
+      <p>湲?먯닔, ?⑥뼱?? 臾몄옣?? 以꾩닔瑜??ㅼ떆媛꾩쑝濡?怨꾩궛?대뱶由쎈땲??/p>
+    </div>
+
+    <!-- AdSense Top -->
+    <div class="adsense-zone" style="max-width:760px;margin:0 auto 24px;">
+      <div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div>
+    </div>
+
+    <div class="tool-box">
+      <div class="form-group">
+        <label class="form-label">?띿뒪???낅젰</label>
+        <textarea class="form-textarea" id="textInput" placeholder="?ш린???띿뒪?몃? ?낅젰?섍굅??遺숈뿬?ｊ린 ?섏꽭??.." style="min-height:200px"></textarea>
+      </div>
+
+      <!-- Options -->
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;">
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:0.9rem;color:var(--text-secondary)">
+          <input type="checkbox" id="excludeSpaces" style="width:16px;height:16px;accent-color:var(--primary)"/>
+          怨듬갚 ?쒖쇅 湲?먯닔
+        </label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:0.9rem;color:var(--text-secondary)">
+          <input type="checkbox" id="excludeNewlines" style="width:16px;height:16px;accent-color:var(--primary)"/>
+          以꾨컮轅??쒖쇅
+        </label>
+      </div>
+
+      <!-- Results -->
+      <div class="result-box">
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-num" id="charCount">0</span>
+            <div class="result-label">湲?먯닔</div>
+          </div>
+          <div class="result-item">
+            <span class="result-num" id="charNoSpaceCount">0</span>
+            <div class="result-label">怨듬갚 ?쒖쇅</div>
+          </div>
+          <div class="result-item">
+            <span class="result-num" id="wordCount">0</span>
+            <div class="result-label">?⑥뼱??/div>
+          </div>
+          <div class="result-item">
+            <span class="result-num" id="sentenceCount">0</span>
+            <div class="result-label">臾몄옣??/div>
+          </div>
+          <div class="result-item">
+            <span class="result-num" id="lineCount">0</span>
+            <div class="result-label">以꾩닔</div>
+          </div>
+          <div class="result-item">
+            <span class="result-num" id="byteCount">0</span>
+            <div class="result-label">諛붿씠??/div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div style="margin-top:20px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+          <span style="font-size:0.85rem;color:var(--text-secondary);font-weight:600">?몄뒪?洹몃옩 罹≪뀡 ?쒗븳</span>
+          <span style="font-size:0.85rem;color:var(--text-secondary)" id="instaProgress">0 / 2,200</span>
+        </div>
+        <div style="background:var(--bg-surface);border-radius:50px;height:8px;overflow:hidden;">
+          <div id="instaBar" style="height:100%;width:0%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:50px;transition:width 0.3s ease;"></div>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+          <span style="font-size:0.85rem;color:var(--text-secondary);font-weight:600">?몄쐞???쒗븳</span>
+          <span style="font-size:0.85rem;color:var(--text-secondary)" id="twitterProgress">0 / 280</span>
+        </div>
+        <div style="background:var(--bg-surface);border-radius:50px;height:8px;overflow:hidden;">
+          <div id="twitterBar" style="height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--secondary));border-radius:50px;transition:width 0.3s ease;"></div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:24px;">
+        <button class="btn-primary" onclick="copyText()">?뱥 蹂듭궗</button>
+        <button class="btn-secondary" onclick="clearText()">?뿊截?吏?곌린</button>
+      </div>
+    </div>
+
+    <!-- AdSense Bottom -->
+    <div class="adsense-zone" style="max-width:760px;margin:24px auto 0;">
+      <div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div>
+    </div>
+
+    <!-- SEO Content -->
+    <div style="max-width:760px;margin:40px auto 0;padding:32px;background:var(--bg-card);border-radius:var(--radius-lg);border:1px solid var(--border)">
+      <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:12px">?뱰 湲?먯닔 ?멸린 ?ъ슜踰?/h2>
+      <p style="color:var(--text-secondary);line-height:1.8;font-size:0.9rem">
+        ???띿뒪???낅젰李쎌뿉 湲?먮? ?낅젰?섏떆硫?<strong>?ㅼ떆媛꾩쑝濡?湲?먯닔, ?⑥뼱?? 臾몄옣?? 以꾩닔, 諛붿씠??/strong>瑜??먮룞?쇰줈 怨꾩궛?⑸땲??
+        SNS 寃뚯떆臾??묒꽦 ???몄뒪?洹몃옩(2,200??, ?몄쐞??280?? 湲???쒗븳???쎄쾶 ?뺤씤?????덉뒿?덈떎.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></div>
+    <p class="footer-copy">짤 2026 ?대컯??쨌 臾대즺 ?⑤씪???꾧뎄</p>
+  </div>
+</footer>
+
+<script>
+// Theme
+const tt = document.getElementById('themeToggle');
+if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); tt.textContent = '?截?; }
+tt.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  tt.textContent = isLight ? '?截? : '?뙔';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
+
+// Counter
+const input = document.getElementById('textInput');
+
+function updateCounts() {
+  const text = input.value;
+  const charCount = text.length;
+  const charNoSpace = text.replace(/\s/g, '').length;
+  const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).filter(w => w !== '').length;
+  const sentenceCount = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(s => s.trim() !== '').length;
+  const lineCount = text === '' ? 0 : text.split('\n').length;
+  const byteCount = new Blob([text]).size;
+
+  document.getElementById('charCount').textContent = charCount.toLocaleString();
+  document.getElementById('charNoSpaceCount').textContent = charNoSpace.toLocaleString();
+  document.getElementById('wordCount').textContent = wordCount.toLocaleString();
+  document.getElementById('sentenceCount').textContent = sentenceCount.toLocaleString();
+  document.getElementById('lineCount').textContent = lineCount.toLocaleString();
+  document.getElementById('byteCount').textContent = byteCount.toLocaleString();
+
+  // Progress bars
+  const instaPct = Math.min((charCount / 2200) * 100, 100);
+  const twitterPct = Math.min((charCount / 280) * 100, 100);
+  document.getElementById('instaBar').style.width = instaPct + '%';
+  document.getElementById('twitterBar').style.width = twitterPct + '%';
+  document.getElementById('instaBar').style.background = instaPct > 90 ? 'linear-gradient(90deg,#ef4444,#f97316)' : 'linear-gradient(90deg,var(--primary),var(--accent))';
+  document.getElementById('twitterBar').style.background = twitterPct > 90 ? 'linear-gradient(90deg,#ef4444,#f97316)' : 'linear-gradient(90deg,var(--accent),var(--secondary))';
+  document.getElementById('instaProgress').textContent = `${charCount.toLocaleString()} / 2,200`;
+  document.getElementById('twitterProgress').textContent = `${charCount.toLocaleString()} / 280`;
+}
+
+input.addEventListener('input', updateCounts);
+
+function copyText() {
+  navigator.clipboard.writeText(input.value).then(() => {
+    const btn = document.querySelector('.btn-primary');
+    btn.textContent = '??蹂듭궗??';
+    setTimeout(() => btn.textContent = '?뱥 蹂듭궗', 2000);
+  });
+}
+
+function clearText() {
+  input.value = '';
+  updateCounts();
+}
+</script>
+</body>
+</html>
+

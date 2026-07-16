@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448989196452809" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>留??섏씠 怨꾩궛湲?- ?곕졊 諛???臾대즺 怨꾩궛 | ?대컯??/title>
+  <meta name="description" content="?앸뀈?붿씪???낅젰?섎㈃ 留??섏씠, ???섏씠(?쒓뎅 ?섏씠), ?? ?ㅼ쓬 ?앹씪源뚯? ?⑥? D-day瑜?臾대즺濡?怨꾩궛?대뱶由쎈땲??" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<header class="header">
+  <nav class="nav container">
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></a>
+    <button class="theme-toggle" id="themeToggle">?뙔</button>
+  </nav>
+</header>
+
+<main class="tool-page">
+  <div class="container">
+    <a href="../index.html" class="back-btn">???꾩껜 ?꾧뎄濡??뚯븘媛湲?/a>
+    <div class="tool-page-header">
+      <div style="font-size:3.5rem" class="tool-emoji">?럟</div>
+      <h1>留??섏씠 怨꾩궛湲?/h1>
+      <p>?뺥솗??留??섏씠? ?? ?ㅼ쓬 ?앹씪源뚯? ?⑥? ?좎쭨瑜?怨꾩궛?⑸땲??/p>
+    </div>
+
+    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+
+    <div class="tool-box glass-card">
+      <div class="form-group">
+        <label class="form-label">?앸뀈?붿씪</label>
+        <input type="date" class="form-input" id="birthDate" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">湲곗???(湲곕낯媛? ?ㅻ뒛)</label>
+        <input type="date" class="form-input" id="baseDate" />
+      </div>
+
+      <button class="btn-primary" onclick="calcAge()" style="width:100%">?럟 ?섏씠 怨꾩궛?섍린</button>
+
+      <div id="ageResult" style="display:none;margin-top:32px;">
+        <div style="text-align:center;margin-bottom:24px;">
+          <div style="font-size:1rem;color:var(--text-secondary);font-weight:600">留??섏씠</div>
+          <div style="font-size:4rem;font-weight:900;color:var(--primary-light);line-height:1.2" id="manAge">-</div>
+          <div style="font-size:1.1rem;color:var(--text-primary);font-weight:700" id="ddi">-</div>
+        </div>
+        
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="background:var(--bg-surface);padding:20px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;">
+            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">???섏씠 (?쒓뎅 ?섏씠)</div>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--accent);margin-top:4px" id="yeonAge">-</div>
+          </div>
+          <div style="background:var(--bg-surface);padding:20px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;">
+            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">?ㅼ쓬 ?앹씪源뚯?</div>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--secondary);margin-top:4px" id="nextBirthday">-</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+  </div>
+</main>
+
+<script src="../main.js"></script>
+<script>
+// ?ㅻ뒛 ?좎쭨 湲곕낯 ?명똿
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('baseDate').value = today;
+
+const DDI_LIST = ['?먯댂?대씈 ?릳','??씈 ?릶','媛쒕씈 ?맯','?쇱????맰','伊먮씈 ?맠','?뚮씈 ?맢','?몃옉?대씈 ?맦','?좊겮???맧','?⑸씈 ?맪','諭???릫','留먮씈 ?맭','?묐씈 ?릲'];
+
+function calcAge() {
+  const birthStr = document.getElementById('birthDate').value;
+  const baseStr = document.getElementById('baseDate').value;
+  if(!birthStr || !baseStr) { alert("?좎쭨瑜??낅젰?댁＜?몄슂."); return; }
+
+  const birth = new Date(birthStr);
+  const base = new Date(baseStr);
+
+  // 留??섏씠
+  let manAge = base.getFullYear() - birth.getFullYear();
+  const m = base.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && base.getDate() < birth.getDate())) {
+    manAge--;
+  }
+
+  // ???섏씠
+  const yeonAge = base.getFullYear() - birth.getFullYear();
+
+  // ??怨꾩궛 (?꾨룄 湲곗?)
+  const ddi = DDI_LIST[birth.getFullYear() % 12];
+
+  // ?ㅼ쓬 ?앹씪 D-day
+  const nextBirth = new Date(base.getFullYear(), birth.getMonth(), birth.getDate());
+  if (base.getTime() > nextBirth.getTime()) {
+    nextBirth.setFullYear(nextBirth.getFullYear() + 1);
+  }
+  const diffTime = nextBirth - base;
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  let ddayText = diffDays === 0 ? "?ㅻ뒛 ?럦" : `D-${diffDays}`;
+
+  document.getElementById('manAge').textContent = manAge + "??;
+  document.getElementById('yeonAge').textContent = yeonAge + "??;
+  document.getElementById('ddi').textContent = ddi;
+  document.getElementById('nextBirthday').textContent = ddayText;
+
+  const res = document.getElementById('ageResult');
+  res.style.display = 'block';
+  res.classList.add('scroll-reveal');
+  setTimeout(()=>res.classList.add('visible'), 50);
+}
+</script>
+</body>
+</html>
+

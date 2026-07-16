@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448989196452809" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>?곕큺 ?ㅼ닔?뱀븸 怨꾩궛湲?- ?멸툑 怨듭젣 ???붽툒 怨꾩궛 | ?대컯??/title>
+  <meta name="description" content="?곕큺 ?낅젰 ??援???곌툑, 嫄닿컯蹂댄뿕, 怨좎슜蹂댄뿕, ?뚮뱷??怨듭젣 ???ㅼ젣 ???ㅼ닔?뱀븸??臾대즺濡?怨꾩궛?대뱶由쎈땲??" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .deduction-item {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px 0; border-bottom:1px solid var(--border); font-size:0.9rem;
+    }
+    .deduction-item:last-child { border:none; }
+    .deduction-label { color:var(--text-secondary); font-weight:500; }
+    .deduction-amount { font-weight:700; }
+    .deduction-amount.negative { color:#ef4444; }
+    .deduction-amount.total { color:var(--primary-light); font-size:1.1rem; }
+    .take-home-badge {
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      border-radius:var(--radius-lg); padding:24px; text-align:center; margin-bottom:16px;
+    }
+    .take-home-badge .label { font-size:0.85rem; opacity:0.8; margin-bottom:6px; }
+    .take-home-badge .amount { font-size:2.5rem; font-weight:800; }
+  </style>
+</head>
+<body>
+<header class="header">
+  <nav class="nav container">
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></a>
+    <button class="theme-toggle" id="themeToggle">?뙔</button>
+  </nav>
+</header>
+
+<main class="tool-page">
+  <div class="container">
+    <a href="../index.html" class="back-btn">???꾩껜 ?꾧뎄濡??뚯븘媛湲?/a>
+    <div class="tool-page-header">
+      <div style="font-size:3.5rem">?뮥</div>
+      <h1>?곕큺 ?ㅼ닔?뱀븸 怨꾩궛湲?/h1>
+      <p>4?蹂댄뿕怨??멸툑 怨듭젣 ???ㅼ젣濡?諛쏅뒗 ?붽툒??怨꾩궛?대뱶由쎈땲??/p>
+    </div>
+
+    <div class="adsense-zone" style="max-width:760px;margin:0 auto 24px;">
+      <div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div>
+    </div>
+
+    <div class="tool-box">
+      <div class="form-group">
+        <label class="form-label">?곕큺 (留뚯썝)</label>
+        <input type="number" class="form-input" id="salary" placeholder="?? 4000" min="0" />
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="form-group" style="margin:0">
+          <label class="form-label">遺?묎?議???/label>
+          <select class="form-select" id="dependents">
+            <option value="1">1紐?(蹂몄씤留?</option>
+            <option value="2">2紐?/option>
+            <option value="3">3紐?/option>
+            <option value="4">4紐?/option>
+            <option value="5">5紐??댁긽</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin:0">
+          <label class="form-label">20???댄븯 ?먮?</label>
+          <select class="form-select" id="children">
+            <option value="0">0紐?/option>
+            <option value="1">1紐?/option>
+            <option value="2">2紐?/option>
+            <option value="3">3紐??댁긽</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="calcSalary()" style="width:100%;margin-top:4px">?뮥 ?ㅼ닔?뱀븸 怨꾩궛?섍린</button>
+
+      <div id="result" style="display:none;">
+        <div class="result-box">
+          <div class="take-home-badge">
+            <div class="label">???ㅼ닔?뱀븸</div>
+            <div class="amount" id="takeHome">-</div>
+          </div>
+
+          <div id="deductions">
+            <div class="deduction-item">
+              <span class="deduction-label">?뮫 ??湲됱뿬 (?몄쟾)</span>
+              <span class="deduction-amount" id="monthlyGross">-</span>
+            </div>
+            <div class="deduction-item">
+              <span class="deduction-label">?룯 援???곌툑 (4.5%)</span>
+              <span class="deduction-amount negative" id="pension">-</span>
+            </div>
+            <div class="deduction-item">
+              <span class="deduction-label">?뭻 嫄닿컯蹂댄뿕 (3.545%)</span>
+              <span class="deduction-amount negative" id="health">-</span>
+            </div>
+            <div class="deduction-item">
+              <span class="deduction-label">?┠ ?κ린?붿뼇蹂댄뿕 (嫄닿컯蹂댄뿕횞12.95%)</span>
+              <span class="deduction-amount negative" id="ltc">-</span>
+            </div>
+            <div class="deduction-item">
+              <span class="deduction-label">?뮳 怨좎슜蹂댄뿕 (0.9%)</span>
+              <span class="deduction-amount negative" id="employment">-</span>
+            </div>
+            <div class="deduction-item">
+              <span class="deduction-label">?뱥 ?뚮뱷??(媛꾩씠?몄븸??</span>
+              <span class="deduction-amount negative" id="incomeTax">-</span>
+            </div>
+            <div class="deduction-item">
+              <span class="deduction-label">?룞截?吏諛⑹냼?앹꽭 (?뚮뱷?맡?0%)</span>
+              <span class="deduction-amount negative" id="localTax">-</span>
+            </div>
+            <div class="deduction-item" style="padding-top:16px;border-top:2px solid var(--primary)">
+              <span style="font-weight:800;font-size:1rem">?뮩 珥?怨듭젣??/span>
+              <span class="deduction-amount negative" id="totalDeduction" style="font-size:1.1rem">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-grid" style="margin-top:16px;">
+          <div class="result-item">
+            <span class="result-num" id="yearlyTake">-</span>
+            <div class="result-label">???ㅼ닔?뱀븸(留뚯썝)</div>
+          </div>
+          <div class="result-item">
+            <span class="result-num" id="taxRate">-</span>
+            <div class="result-label">?ㅽ슚?몄쑉</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="adsense-zone" style="max-width:760px;margin:24px auto 0;">
+      <div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div>
+    </div>
+
+    <div style="max-width:760px;margin:40px auto 0;padding:32px;background:var(--bg-card);border-radius:var(--radius-lg);border:1px solid var(--border)">
+      <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:12px">?좑툘 怨꾩궛 ?덈궡</h2>
+      <p style="color:var(--text-secondary);line-height:1.8;font-size:0.85rem">
+        蹂?怨꾩궛湲곕뒗 2024??湲곗? 4?蹂댄뿕 ?붿쑉???곸슜??<strong>洹쇱궗移?/strong>?낅땲?? ?ㅼ젣 ?섎졊?≪? ?뚯궗 蹂듬━?꾩깮, 鍮꾧낵????ぉ, ?곕쭚?뺤궛 寃곌낵???곕씪 ?ㅻ? ???덉뒿?덈떎. ?뺥솗??湲덉븸? 湲됱뿬紐낆꽭?쒕? ?뺤씤?섍굅???몃Т?ъ뿉寃?臾몄쓽?섏꽭??
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></div>
+    <p class="footer-copy">짤 2026 ?대컯??쨌 臾대즺 ?⑤씪???꾧뎄</p>
+  </div>
+</footer>
+
+<script>
+const tt = document.getElementById('themeToggle');
+if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); tt.textContent = '?截?; }
+tt.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  tt.textContent = isLight ? '?截? : '?뙔';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
+
+function fmt(n) { return Math.round(n).toLocaleString() + '??; }
+
+// Simplified income tax table (monthly gross in won)
+function getIncomeTax(monthly, dependents) {
+  const d = parseInt(dependents);
+  // Simplified progressive rates
+  if (monthly <= 1060000) return 0;
+  if (monthly <= 1500000) return Math.round(monthly * 0.006);
+  if (monthly <= 3000000) return Math.round(monthly * 0.015);
+  if (monthly <= 4500000) return Math.round(monthly * 0.024);
+  if (monthly <= 7800000) return Math.round(monthly * 0.035);
+  if (monthly <= 12000000) return Math.round(monthly * 0.048);
+  return Math.round(monthly * 0.062);
+}
+
+function calcSalary() {
+  const annual = parseFloat(document.getElementById('salary').value) * 10000;
+  if (!annual || annual <= 0) { alert('?곕큺???낅젰?댁＜?몄슂.'); return; }
+  const dependents = document.getElementById('dependents').value;
+  const monthly = annual / 12;
+
+  const pension = Math.round(monthly * 0.045);
+  const health = Math.round(monthly * 0.03545);
+  const ltc = Math.round(health * 0.1295);
+  const employment = Math.round(monthly * 0.009);
+  const incomeTax = getIncomeTax(monthly, dependents);
+  const localTax = Math.round(incomeTax * 0.1);
+  const totalDeduction = pension + health + ltc + employment + incomeTax + localTax;
+  const takeHome = monthly - totalDeduction;
+
+  document.getElementById('monthlyGross').textContent = fmt(monthly);
+  document.getElementById('pension').textContent = '-' + fmt(pension);
+  document.getElementById('health').textContent = '-' + fmt(health);
+  document.getElementById('ltc').textContent = '-' + fmt(ltc);
+  document.getElementById('employment').textContent = '-' + fmt(employment);
+  document.getElementById('incomeTax').textContent = '-' + fmt(incomeTax);
+  document.getElementById('localTax').textContent = '-' + fmt(localTax);
+  document.getElementById('totalDeduction').textContent = '-' + fmt(totalDeduction);
+  document.getElementById('takeHome').textContent = fmt(takeHome);
+  document.getElementById('yearlyTake').textContent = Math.round(takeHome * 12 / 10000).toLocaleString() + '留?;
+  document.getElementById('taxRate').textContent = (totalDeduction / monthly * 100).toFixed(1) + '%';
+
+  const resultEl = document.getElementById('result');
+  resultEl.style.display = 'block';
+  resultEl.scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+</script>
+</body>
+</html>
+
