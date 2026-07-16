@@ -4,8 +4,8 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448989196452809" crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>?됱긽 肄붾뱶 蹂?섍린 - HEX, RGB, HSL 臾대즺 蹂??| ?대컯??/title>
-  <meta name="description" content="?먰븯???됱긽???좏깮?섎㈃ HEX, RGB, HSL 肄붾뱶濡?利됱떆 蹂?섑빐?쒕┰?덈떎. 臾대즺 而щ윭 ?쇱빱 ?꾧뎄!" />
+  <title>색상 코드 변환기 - HEX, RGB, HSL 무료 변환 | 툴박스</title>
+  <meta name="description" content="원하는 색상을 선택하면 HEX, RGB, HSL 코드로 즉시 변환해드립니다. 무료 컬러 피커 도구!" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
@@ -33,21 +33,21 @@
 <body>
 <header class="header">
   <nav class="nav container">
-    <a href="../index.html" class="nav-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></a>
-    <button class="theme-toggle" id="themeToggle">?뙔</button>
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">🛠️</span><span class="logo-text">툴박스</span></a>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
   </nav>
 </header>
 
 <main class="tool-page">
   <div class="container">
-    <a href="../index.html" class="back-btn">???꾩껜 ?꾧뎄濡??뚯븘媛湲?/a>
+    <a href="../index.html" class="back-btn">← 전체 도구로 돌아가기</a>
     <div class="tool-page-header">
-      <div style="font-size:3.5rem" class="tool-emoji">?렓</div>
-      <h1>?됱긽 肄붾뱶 蹂?섍린</h1>
-      <p>而щ윭瑜??좏깮?섍퀬 HEX, RGB, HSL 肄붾뱶瑜?蹂듭궗?섏꽭??/p>
+      <div style="font-size:3.5rem" class="tool-emoji">🎨</div>
+      <h1>색상 코드 변환기</h1>
+      <p>컬러를 선택하고 HEX, RGB, HSL 코드를 복사하세요</p>
     </div>
 
-    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">📢 광고 (Google AdSense)</div></div>
 
     <div class="tool-box glass-card">
       <div class="color-preview" id="colorPreview" style="background-color: #6366f1;"></div>
@@ -55,26 +55,26 @@
       <div style="display:flex;gap:16px;align-items:center;margin-bottom:32px;">
         <input type="color" id="colorPicker" value="#6366f1" style="width:60px;height:60px;border:none;border-radius:8px;cursor:pointer;background:none;" oninput="updateColors()" />
         <div style="flex:1;">
-          <label class="form-label" style="margin-bottom:4px;">?됱긽 ?좏깮湲?/label>
-          <p style="font-size:0.85rem;color:var(--text-muted)">?쇱そ???됱긽 ?곸옄瑜??대┃?섏뿬 ?먰븯??而щ윭瑜?怨좊Ⅴ?몄슂.</p>
+          <label class="form-label" style="margin-bottom:4px;">색상 선택기</label>
+          <p style="font-size:0.85rem;color:var(--text-muted)">왼쪽의 색상 상자를 클릭하여 원하는 컬러를 고르세요.</p>
         </div>
       </div>
 
       <div class="code-box">
         <div><span class="code-label">HEX</span><span id="hexCode" style="color:var(--text-primary);font-weight:700">#6366F1</span></div>
-        <div class="copy-icon" onclick="copyCode('hexCode')" title="蹂듭궗">?뱥</div>
+        <div class="copy-icon" onclick="copyCode('hexCode')" title="복사">📋</div>
       </div>
       <div class="code-box">
         <div><span class="code-label">RGB</span><span id="rgbCode" style="color:var(--text-primary);font-weight:700">rgb(99, 102, 241)</span></div>
-        <div class="copy-icon" onclick="copyCode('rgbCode')" title="蹂듭궗">?뱥</div>
+        <div class="copy-icon" onclick="copyCode('rgbCode')" title="복사">📋</div>
       </div>
       <div class="code-box">
         <div><span class="code-label">HSL</span><span id="hslCode" style="color:var(--text-primary);font-weight:700">hsl(239, 82%, 67%)</span></div>
-        <div class="copy-icon" onclick="copyCode('hslCode')" title="蹂듭궗">?뱥</div>
+        <div class="copy-icon" onclick="copyCode('hslCode')" title="복사">📋</div>
       </div>
     </div>
 
-    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">📢 광고 (Google AdSense)</div></div>
   </div>
 </main>
 
@@ -126,10 +126,9 @@ function updateColors() {
 function copyCode(id) {
   const text = document.getElementById(id).textContent;
   navigator.clipboard.writeText(text).then(() => {
-    alert(text + " 蹂듭궗?섏뿀?듬땲??");
+    alert(text + " 복사되었습니다!");
   });
 }
 </script>
 </body>
 </html>
-

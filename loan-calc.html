@@ -4,8 +4,8 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448989196452809" crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>?異??댁옄 怨꾩궛湲?- ?먮━湲덇퇏?? 留뚭린?쇱떆?곹솚 臾대즺 怨꾩궛 | ?대컯??/title>
-  <meta name="description" content="?먮━湲덇퇏?? ?먭툑洹좊벑, 留뚭린?쇱떆?곹솚 諛⑹떇???곕Ⅸ ???곹솚?↔낵 珥??댁옄瑜?臾대즺濡?怨꾩궛?대뱶由쎈땲??" />
+  <title>대출 이자 계산기 - 원리금균등, 만기일시상환 무료 계산 | 툴박스</title>
+  <meta name="description" content="원리금균등, 원금균등, 만기일시상환 방식에 따른 월 상환액과 총 이자를 무료로 계산해드립니다." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
@@ -23,106 +23,107 @@
 <body>
 <header class="header">
   <nav class="nav container">
-    <a href="../index.html" class="nav-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></a>
-    <button class="theme-toggle" id="themeToggle">?뙔</button>
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">🛠️</span><span class="logo-text">툴박스</span></a>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
   </nav>
 </header>
 
 <main class="tool-page">
   <div class="container">
-    <a href="../index.html" class="back-btn">???꾩껜 ?꾧뎄濡??뚯븘媛湲?/a>
+    <a href="../index.html" class="back-btn">← 전체 도구로 돌아가기</a>
     <div class="tool-page-header">
-      <div style="font-size:3.5rem" class="tool-emoji">?룱</div>
-      <h1>?異??댁옄 怨꾩궛湲?/h1>
-      <p>?곹솚 諛⑹떇???곕Ⅸ ???⑹엯湲덇낵 珥??댁옄瑜??뺥솗?섍쾶 怨꾩궛</p>
+      <div style="font-size:3.5rem" class="tool-emoji">🏦</div>
+      <h1>대출 이자 계산기</h1>
+      <p>상환 방식에 따른 월 납입금과 총 이자를 정확하게 계산</p>
     </div>
 
-    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">📢 광고 (Google AdSense)</div></div>
 
     <div class="tool-box glass-card">
       <div class="form-group">
-        <label class="form-label">?異?湲덉븸 (留뚯썝)</label>
-        <input type="number" class="form-input" id="loanAmount" placeholder="?? 10000 (1??" />
+        <label class="form-label">대출 금액 (만원)</label>
+        <input type="number" class="form-input" id="loanAmount" placeholder="예: 10000 (1억)" />
       </div>
       
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div class="form-group">
-          <label class="form-label">?異?湲곌컙 (媛쒖썡)</label>
-          <input type="number" class="form-input" id="loanTerm" placeholder="?? 120 (10??" />
+          <label class="form-label">대출 기간 (개월)</label>
+          <input type="number" class="form-input" id="loanTerm" placeholder="예: 120 (10년)" />
         </div>
         <div class="form-group">
-          <label class="form-label">???댁옄??(%)</label>
-          <input type="number" class="form-input" id="loanRate" placeholder="?? 5.5" step="0.1" />
+          <label class="form-label">연 이자율 (%)</label>
+          <input type="number" class="form-input" id="loanRate" placeholder="예: 5.5" step="0.1" />
         </div>
       </div>
 
       <div class="form-group">
-        <label class="form-label">?곹솚 諛⑹떇</label>
+        <label class="form-label">상환 방식</label>
         <select class="form-select" id="repayType">
-          <option value="equal_all">?먮━湲덇퇏?깆긽??(留ㅼ썡 ?숈씪??湲덉븸)</option>
-          <option value="equal_prin">?먭툑洹좊벑?곹솚 (留ㅼ썡 ?먭툑 ?숈씪, ?댁옄 媛먯냼)</option>
-          <option value="bullet">留뚭린?쇱떆?곹솚 (留ㅼ썡 ?댁옄留? 留덉?留됱뿉 ?먭툑)</option>
+          <option value="equal_all">원리금균등상환 (매월 동일한 금액)</option>
+          <option value="equal_prin">원금균등상환 (매월 원금 동일, 이자 감소)</option>
+          <option value="bullet">만기일시상환 (매월 이자만, 마지막에 원금)</option>
         </select>
       </div>
 
-      <button class="btn-primary" onclick="calcLoan()" style="width:100%;margin-top:16px;">?룱 怨꾩궛?섍린</button>
+      <button class="btn-primary" onclick="calcLoan()" style="width:100%;margin-top:16px;">🏦 계산하기</button>
 
       <div id="resultArea" style="display:none;">
         <div class="result-highlight">
-          <div class="label" id="monthlyLabel">泥????곹솚??/div>
+          <div class="label" id="monthlyLabel">첫 달 상환액</div>
           <div class="amount" id="monthlyPay">-</div>
-          <div style="font-size:0.9rem;color:var(--text-muted)">?먭툑 + ?댁옄</div>
+          <div style="font-size:0.9rem;color:var(--text-muted)">원금 + 이자</div>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;">
           <div style="background:var(--bg-surface);padding:24px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;">
-            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">珥??댁옄??/div>
+            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">총 이자액</div>
             <div style="font-size:1.8rem;font-weight:800;color:var(--warning);margin-top:8px" id="totalInterest">-</div>
           </div>
           <div style="background:var(--bg-surface);padding:24px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;">
-            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">珥??곹솚湲덉븸</div>
+            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">총 상환금액</div>
             <div style="font-size:1.8rem;font-weight:800;color:var(--success);margin-top:8px" id="totalRepay">-</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">📢 광고 (Google AdSense)</div></div>
   </div>
 </main>
 
 <script src="../main.js"></script>
 <script>
-function fmt(n) { return Math.round(n).toLocaleString() + '??; }
+function fmt(n) { return Math.round(n).toLocaleString() + '원'; }
 
 function calcLoan() {
   const p = parseFloat(document.getElementById('loanAmount').value) * 10000;
   const n = parseInt(document.getElementById('loanTerm').value);
-  const r = parseFloat(document.getElementById('loanRate').value) / 100 / 12; // ?붿씠?먯쑉
+  const r = parseFloat(document.getElementById('loanRate').value) / 100 / 12; // 월이자율
   const type = document.getElementById('repayType').value;
 
-  if(!p || !n || !r) { alert("紐⑤뱺 媛믪쓣 ?щ컮瑜닿쾶 ?낅젰?댁＜?몄슂."); return; }
+  if(!p || !n || !r) { alert("모든 값을 올바르게 입력해주세요."); return; }
 
   let monthlyFirst = 0;
   let totalInt = 0;
 
   if(type === 'equal_all') {
-    // ?먮━湲덇퇏??    const payment = p * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1);
+    // 원리금균등
+    const payment = p * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1);
     monthlyFirst = payment;
     totalInt = (payment * n) - p;
-    document.getElementById('monthlyLabel').textContent = "留ㅼ썡 ?곹솚??;
+    document.getElementById('monthlyLabel').textContent = "매월 상환액";
   } else if(type === 'equal_prin') {
-    // ?먭툑洹좊벑
+    // 원금균등
     const principalPay = p / n;
     monthlyFirst = principalPay + (p * r);
-    // 珥앹씠??= ?먭툑 * ?댁쑉 * (媛쒖썡??1) / 2
+    // 총이자 = 원금 * 이율 * (개월수+1) / 2
     totalInt = p * r * (n + 1) / 2;
-    document.getElementById('monthlyLabel').textContent = "泥????곹솚??(留ㅼ썡 媛먯냼)";
+    document.getElementById('monthlyLabel').textContent = "첫 달 상환액 (매월 감소)";
   } else if(type === 'bullet') {
-    // 留뚭린?쇱떆
+    // 만기일시
     monthlyFirst = p * r;
     totalInt = monthlyFirst * n;
-    document.getElementById('monthlyLabel').textContent = "留ㅼ썡 ?곹솚??(?댁옄留?";
+    document.getElementById('monthlyLabel').textContent = "매월 상환액 (이자만)";
   }
 
   const totalRepay = p + totalInt;
@@ -139,4 +140,3 @@ function calcLoan() {
 </script>
 </body>
 </html>
-

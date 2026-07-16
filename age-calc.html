@@ -4,8 +4,8 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448989196452809" crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>留??섏씠 怨꾩궛湲?- ?곕졊 諛???臾대즺 怨꾩궛 | ?대컯??/title>
-  <meta name="description" content="?앸뀈?붿씪???낅젰?섎㈃ 留??섏씠, ???섏씠(?쒓뎅 ?섏씠), ?? ?ㅼ쓬 ?앹씪源뚯? ?⑥? D-day瑜?臾대즺濡?怨꾩궛?대뱶由쎈땲??" />
+  <title>만 나이 계산기 - 연령 및 띠 무료 계산 | 툴박스</title>
+  <meta name="description" content="생년월일을 입력하면 만 나이, 연 나이(한국 나이), 띠, 다음 생일까지 남은 D-day를 무료로 계산해드립니다." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
@@ -13,98 +13,98 @@
 <body>
 <header class="header">
   <nav class="nav container">
-    <a href="../index.html" class="nav-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></a>
-    <button class="theme-toggle" id="themeToggle">?뙔</button>
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">🛠️</span><span class="logo-text">툴박스</span></a>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
   </nav>
 </header>
 
 <main class="tool-page">
   <div class="container">
-    <a href="../index.html" class="back-btn">???꾩껜 ?꾧뎄濡??뚯븘媛湲?/a>
+    <a href="../index.html" class="back-btn">← 전체 도구로 돌아가기</a>
     <div class="tool-page-header">
-      <div style="font-size:3.5rem" class="tool-emoji">?럟</div>
-      <h1>留??섏씠 怨꾩궛湲?/h1>
-      <p>?뺥솗??留??섏씠? ?? ?ㅼ쓬 ?앹씪源뚯? ?⑥? ?좎쭨瑜?怨꾩궛?⑸땲??/p>
+      <div style="font-size:3.5rem" class="tool-emoji">🎂</div>
+      <h1>만 나이 계산기</h1>
+      <p>정확한 만 나이와 띠, 다음 생일까지 남은 날짜를 계산합니다</p>
     </div>
 
-    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">📢 광고 (Google AdSense)</div></div>
 
     <div class="tool-box glass-card">
       <div class="form-group">
-        <label class="form-label">?앸뀈?붿씪</label>
+        <label class="form-label">생년월일</label>
         <input type="date" class="form-input" id="birthDate" />
       </div>
       <div class="form-group">
-        <label class="form-label">湲곗???(湲곕낯媛? ?ㅻ뒛)</label>
+        <label class="form-label">기준일 (기본값: 오늘)</label>
         <input type="date" class="form-input" id="baseDate" />
       </div>
 
-      <button class="btn-primary" onclick="calcAge()" style="width:100%">?럟 ?섏씠 怨꾩궛?섍린</button>
+      <button class="btn-primary" onclick="calcAge()" style="width:100%">🎂 나이 계산하기</button>
 
       <div id="ageResult" style="display:none;margin-top:32px;">
         <div style="text-align:center;margin-bottom:24px;">
-          <div style="font-size:1rem;color:var(--text-secondary);font-weight:600">留??섏씠</div>
+          <div style="font-size:1rem;color:var(--text-secondary);font-weight:600">만 나이</div>
           <div style="font-size:4rem;font-weight:900;color:var(--primary-light);line-height:1.2" id="manAge">-</div>
           <div style="font-size:1.1rem;color:var(--text-primary);font-weight:700" id="ddi">-</div>
         </div>
         
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div style="background:var(--bg-surface);padding:20px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;">
-            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">???섏씠 (?쒓뎅 ?섏씠)</div>
+            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">연 나이 (한국 나이)</div>
             <div style="font-size:1.8rem;font-weight:800;color:var(--accent);margin-top:4px" id="yeonAge">-</div>
           </div>
           <div style="background:var(--bg-surface);padding:20px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;">
-            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">?ㅼ쓬 ?앹씪源뚯?</div>
+            <div style="font-size:0.9rem;color:var(--text-secondary);font-weight:600">다음 생일까지</div>
             <div style="font-size:1.8rem;font-weight:800;color:var(--secondary);margin-top:4px" id="nextBirthday">-</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">📢 광고 (Google AdSense)</div></div>
   </div>
 </main>
 
 <script src="../main.js"></script>
 <script>
-// ?ㅻ뒛 ?좎쭨 湲곕낯 ?명똿
+// 오늘 날짜 기본 세팅
 const today = new Date().toISOString().split('T')[0];
 document.getElementById('baseDate').value = today;
 
-const DDI_LIST = ['?먯댂?대씈 ?릳','??씈 ?릶','媛쒕씈 ?맯','?쇱????맰','伊먮씈 ?맠','?뚮씈 ?맢','?몃옉?대씈 ?맦','?좊겮???맧','?⑸씈 ?맪','諭???릫','留먮씈 ?맭','?묐씈 ?릲'];
+const DDI_LIST = ['원숭이띠 🐒','닭띠 🐔','개띠 🐶','돼지띠 🐷','쥐띠 🐭','소띠 🐮','호랑이띠 🐯','토끼띠 🐰','용띠 🐲','뱀띠 🐍','말띠 🐴','양띠 🐑'];
 
 function calcAge() {
   const birthStr = document.getElementById('birthDate').value;
   const baseStr = document.getElementById('baseDate').value;
-  if(!birthStr || !baseStr) { alert("?좎쭨瑜??낅젰?댁＜?몄슂."); return; }
+  if(!birthStr || !baseStr) { alert("날짜를 입력해주세요."); return; }
 
   const birth = new Date(birthStr);
   const base = new Date(baseStr);
 
-  // 留??섏씠
+  // 만 나이
   let manAge = base.getFullYear() - birth.getFullYear();
   const m = base.getMonth() - birth.getMonth();
   if (m < 0 || (m === 0 && base.getDate() < birth.getDate())) {
     manAge--;
   }
 
-  // ???섏씠
+  // 연 나이
   const yeonAge = base.getFullYear() - birth.getFullYear();
 
-  // ??怨꾩궛 (?꾨룄 湲곗?)
+  // 띠 계산 (년도 기준)
   const ddi = DDI_LIST[birth.getFullYear() % 12];
 
-  // ?ㅼ쓬 ?앹씪 D-day
+  // 다음 생일 D-day
   const nextBirth = new Date(base.getFullYear(), birth.getMonth(), birth.getDate());
   if (base.getTime() > nextBirth.getTime()) {
     nextBirth.setFullYear(nextBirth.getFullYear() + 1);
   }
   const diffTime = nextBirth - base;
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  let ddayText = diffDays === 0 ? "?ㅻ뒛 ?럦" : `D-${diffDays}`;
+  let ddayText = diffDays === 0 ? "오늘 🎉" : `D-${diffDays}`;
 
-  document.getElementById('manAge').textContent = manAge + "??;
-  document.getElementById('yeonAge').textContent = yeonAge + "??;
+  document.getElementById('manAge').textContent = manAge + "세";
+  document.getElementById('yeonAge').textContent = yeonAge + "세";
   document.getElementById('ddi').textContent = ddi;
   document.getElementById('nextBirthday').textContent = ddayText;
 
@@ -116,4 +116,3 @@ function calcAge() {
 </script>
 </body>
 </html>
-

@@ -4,8 +4,8 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448989196452809" crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QR 肄붾뱶 ?앹꽦湲?- URL, ?띿뒪??臾대즺 蹂??| ?대컯??/title>
-  <meta name="description" content="?뱀궗?댄듃 URL, ?곕씫泥? ?띿뒪?몃? ?낅젰?섎㈃ 臾대즺濡?QR 肄붾뱶瑜?利됱떆 ?앹꽦?섍퀬 ?ㅼ슫濡쒕뱶?????덉뒿?덈떎." />
+  <title>QR 코드 생성기 - URL, 텍스트 무료 변환 | 툴박스</title>
+  <meta name="description" content="웹사이트 URL, 연락처, 텍스트를 입력하면 무료로 QR 코드를 즉시 생성하고 다운로드할 수 있습니다." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
@@ -23,37 +23,37 @@
 <body>
 <header class="header">
   <nav class="nav container">
-    <a href="../index.html" class="nav-logo"><span class="logo-icon">?썱截?/span><span class="logo-text">?대컯??/span></a>
-    <button class="theme-toggle" id="themeToggle">?뙔</button>
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">🛠️</span><span class="logo-text">툴박스</span></a>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
   </nav>
 </header>
 
 <main class="tool-page">
   <div class="container">
-    <a href="../index.html" class="back-btn">???꾩껜 ?꾧뎄濡??뚯븘媛湲?/a>
+    <a href="../index.html" class="back-btn">← 전체 도구로 돌아가기</a>
     <div class="tool-page-header">
-      <div style="font-size:3.5rem" class="tool-emoji">?벑</div>
-      <h1>QR 肄붾뱶 ?앹꽦湲?/h1>
-      <p>URL?대굹 ?띿뒪?몃? 怨좏솕吏?QR肄붾뱶濡?蹂?섑븯怨???ν븯?몄슂</p>
+      <div style="font-size:3.5rem" class="tool-emoji">📱</div>
+      <h1>QR 코드 생성기</h1>
+      <p>URL이나 텍스트를 고화질 QR코드로 변환하고 저장하세요</p>
     </div>
 
-    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+    <div class="adsense-zone" style="max-width:800px;margin:0 auto 24px;"><div class="adsense-placeholder">📢 광고 (Google AdSense)</div></div>
 
     <div class="tool-box glass-card">
       <div class="form-group">
-        <label class="form-label">URL ?먮뒗 ?띿뒪???낅젰</label>
-        <input type="text" class="form-input" id="qrText" placeholder="?? https://google.com ?먮뒗 ?몄궗留? onkeypress="if(event.key === 'Enter') generateQR()" />
+        <label class="form-label">URL 또는 텍스트 입력</label>
+        <input type="text" class="form-input" id="qrText" placeholder="예: https://google.com 또는 인사말" onkeypress="if(event.key === 'Enter') generateQR()" />
       </div>
 
-      <button class="btn-primary" onclick="generateQR()" style="width:100%">?벑 QR 肄붾뱶 留뚮뱾湲?/button>
+      <button class="btn-primary" onclick="generateQR()" style="width:100%">📱 QR 코드 만들기</button>
 
       <div id="qrResult" style="display:none; text-align:center;">
         <div id="qrcode"></div>
-        <button class="btn-secondary" onclick="downloadQR()">燧뉛툘 ?대?吏 ?ㅼ슫濡쒕뱶</button>
+        <button class="btn-secondary" onclick="downloadQR()">⬇️ 이미지 다운로드</button>
       </div>
     </div>
 
-    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">?뱼 愿묎퀬 (Google AdSense)</div></div>
+    <div class="adsense-zone" style="max-width:800px;margin:24px auto 0;"><div class="adsense-placeholder">📢 광고 (Google AdSense)</div></div>
   </div>
 </main>
 
@@ -63,10 +63,11 @@ let qrcodeObj = null;
 
 function generateQR() {
   const text = document.getElementById('qrText').value;
-  if(!text) { alert("URL?대굹 ?띿뒪?몃? ?낅젰?댁＜?몄슂."); return; }
+  if(!text) { alert("URL이나 텍스트를 입력해주세요."); return; }
   
   const qrDiv = document.getElementById('qrcode');
-  qrDiv.innerHTML = ""; // 珥덇린??  
+  qrDiv.innerHTML = ""; // 초기화
+  
   qrcodeObj = new QRCode(qrDiv, {
     text: text,
     width: 256,
@@ -85,7 +86,8 @@ function generateQR() {
 function downloadQR() {
   const img = document.querySelector('#qrcode img');
   if(!img || !img.src) {
-    // 媛꾪샊 img ?뚮뜑留???canvas留??덈뒗 寃쎌슦 ?鍮?    const canvas = document.querySelector('#qrcode canvas');
+    // 간혹 img 렌더링 전 canvas만 있는 경우 대비
+    const canvas = document.querySelector('#qrcode canvas');
     if(canvas) {
       const link = document.createElement('a');
       link.href = canvas.toDataURL("image/png");
@@ -102,4 +104,3 @@ function downloadQR() {
 </script>
 </body>
 </html>
-
