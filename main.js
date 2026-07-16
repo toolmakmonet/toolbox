@@ -1,4 +1,4 @@
-// ===== 툴박스 메인 JS (Premium Animations) =====
+﻿// ===== 툴박스 메인 JS (Premium Animations) =====
 
 // Theme toggle
 const themeToggle = document.getElementById('themeToggle');
